@@ -1,0 +1,12 @@
+{
+  "name": "soloproject",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+
+ "scripts": {
+
+  "start": "node ./app.js"
+  
+ }
+}
