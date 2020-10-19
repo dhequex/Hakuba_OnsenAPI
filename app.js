@@ -2,10 +2,11 @@ const knexconfig = require("./knexfile");
 const knex = require('knex')(knexconfig);
 
 const express = require('express');
+const Knex = require("knex");
 const app = express();
 const port = 3000;
 
-app.use(express.static("/"));
+app.use(express.static("./"));
 
 app.get("/api/name", (req, res) => {
     knex
@@ -52,31 +53,26 @@ app.get("/api/fees", (req, res) => {
 app.post("/api/createOnsen/:name", async (req, res) => {
     const newOnsen = req.params
     
-    try {
-    const names = await knex.insert(newOnsen);
-    return res.status(201).json(newOnsen);
-    } catch (err){
-     res.status(500).json({message: "Error creating New Onsen", error: err})
-    }
+    const names = await knex.table('name').insert(newOnsen);
+    return res.status(201).json(names);
+
 });
 
 
-app.patch("/api/createOnsen/:name", async (req, res) => {
-    const changeOnsen = req.body
+app.patch("/api/modifyOnsen/:name", async (req, res) => {
+    const changeOnsen = Knex.select(req.params).from('name');
     
-    try {
-    const names = await knex.insert(newOnsen);
-    return res.status(201).json(newOnsen);
-    } catch (err){
-     res.status(500).json({message: "Error creating New Onsen", error: err})
-    }
+    
+    const patch = await knex.table('name').insert(changeOnsen);
+    return res.status(201).json(patch);
+  
 });
 
 app.delete("/api/deleteOnsen/:name", async (req, res) => {
-    const deleteOnsen = req.body
+    const toDelete = Knex.select(req.params).from('name')
     
-    const deletedOnsen = await knex.delete(deleteOnsen);
-    return res.status(201).json(newOnsen);
+    const deletedOnsen = await knex.delete(toDelete);
+    return res.status(201).json(deletedOnsen);
    
 });
 

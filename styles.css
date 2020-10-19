@@ -1,0 +1,13 @@
+h1{
+font-weight: 500;
+font-size: 4cm;
+color: aliceblue;
+
+}
+
+body{
+    background-image: url("//s3.amazonaws.com/appforest_uf/f1596416177874x489869275173990800/IMG_5461.jpg");
+    background-color: #cccccc;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
