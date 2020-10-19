@@ -1,15 +1,14 @@
+require("dotenv").config();
 // Update with your config settings.
 
 module.exports = {
 
   development: {
-    client: 'postgres',
-
+      client:'pg',
       connection: {
         host : '127.0.0.1',
-        user : '3301hakuba',
-        password : 'your_database_password',
-        database : 'hakuba_hotsprings'
+        user : 'process.env.DB_USER',
+        database : 'process.env.DB_NAME'
       }
     
   },

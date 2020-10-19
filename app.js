@@ -1,4 +1,4 @@
-const knexconfig = require("./kexfile");
+const knexconfig = require("./knexfile");
 const knex = require('knex')(knexconfig);
 
 const names = knex
@@ -14,9 +14,16 @@ const port = 3000;
 
 app.use(express.static("/"));
 
-app.get("/", (req,res) => {
-    res.send("Hello world")
+app.get("/api/", (req, res) => {
+    knex
+    .select()
+    .from('name')
+    .then ((data) => {
+        console.log(data)
+        res.send(data);
+    });
 });
+
 
 app.listen(port, () =>{
     console.log(`Example app listening at http://localhost:${port}`)
