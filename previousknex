@@ -1,0 +1,30 @@
+
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'hakuba_hotsprings',
+      user:     '3301hakuba',
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'hakuba_hotsprings',
+      user:     '3301hakuba',
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
