@@ -1,13 +1,21 @@
 h1{
 font-weight: 500;
-font-size: 4cm;
+font-size: 40px;
 color: aliceblue;
+font-family: Arial, Helvetica, sans-serif;
+float: center;
 
 }
 
 body{
-    background-image: url("//s3.amazonaws.com/appforest_uf/f1596416177874x489869275173990800/IMG_5461.jpg");
-    background-color: #cccccc;
+    background-image: url("https://www.vill.hakuba.nagano.jp/privilege/img/onsen/himekawa.jpg");
+    background-color: #4B86E8;
     background-size:cover;
     background-repeat: no-repeat;
+}
+
+iframe{
+    margin-left: 1cm;
+
+
 }
