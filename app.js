@@ -37,10 +37,22 @@ app.get("/api/businesshours", (req, res) => {
     });
 });
 
-app.get("/api/businesshours", (req, res) => {
+app.get("/api/fees", (req, res) => {
     knex
     .select()
-    .from('BusinessHours')
+    .from('fees')
+    .then ((data) => {
+        console.log(data)
+        res.send(data);
+    });
+});
+
+app.post("/api/name/:name", (req, res) => {
+    newOnsen = req.params
+    
+    knex
+    .select()
+    .from('fees')
     .then ((data) => {
         console.log(data)
         res.send(data);
