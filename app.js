@@ -61,6 +61,27 @@ app.post("/api/createOnsen/:name", async (req, res) => {
 });
 
 
+app.patch("/api/createOnsen/:name", async (req, res) => {
+    const changeOnsen = req.body
+    
+    try {
+    const names = await knex.insert(newOnsen);
+    return res.status(201).json(newOnsen);
+    } catch (err){
+     res.status(500).json({message: "Error creating New Onsen", error: err})
+    }
+});
+
+app.delete("/api/deleteOnsen/:name", async (req, res) => {
+    const deleteOnsen = req.body
+    
+    const deletedOnsen = await knex.delete(deleteOnsen);
+    return res.status(201).json(newOnsen);
+   
+});
+
+
+
 app.listen(port, () =>{
     console.log(`Example app listening at http://localhost:${port}`)
 });
