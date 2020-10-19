@@ -1,12 +1,5 @@
-const knex = require('knex')({
-    client: 'postgres',
-    connection: {
-      host : '127.0.0.1',
-      user : '3301hakuba',
-      password : 'your_database_password',
-      database : 'hakuba_hotsprings'
-    }
-  });
+const knexconfig = require("./kexfile");
+const knex = require('knex')(knexconfig);
 
 const names = knex
 .select()
