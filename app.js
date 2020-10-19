@@ -47,16 +47,17 @@ app.get("/api/fees", (req, res) => {
     });
 });
 
-app.post("/api/name/:name", (req, res) => {
-    newOnsen = req.params
+
+
+app.post("/api/createOnsen/:name", async (req, res) => {
+    const newOnsen = req.params
     
-    knex
-    .select()
-    .from('fees')
-    .then ((data) => {
-        console.log(data)
-        res.send(data);
-    });
+    try {
+    const names = await knex.insert(newOnsen);
+    return res.status(201).json(newOnsen);
+    } catch (err){
+     res.status(500).json({message: "Error creating New Onsen", error: err})
+    }
 });
 
 
