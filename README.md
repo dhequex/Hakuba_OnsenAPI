@@ -12,7 +12,7 @@
 
 **Database for this project needs to be created on Postgres using the command CREATE DATABASE *hakuba_hotsprings*.
 
-🤖 Migration and Seed**
+🤖 Migration and Seeds**
 
 **The project includes 4 migrations and seed files to create the tables and populate the Database with data about Onsen facilities in Hakuba Village.**
 
