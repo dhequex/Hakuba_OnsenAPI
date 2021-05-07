@@ -1,6 +1,5 @@
 # Hakuba Village Onsen API
 
-“This was created during my time as a student at Code Chrysalis”
 
 ## README.md
 
